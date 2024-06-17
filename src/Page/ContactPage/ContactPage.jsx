@@ -1,11 +1,14 @@
+import ContactForm from "./ContactForm/ContactForm";
 import ContactLocation from "./ContactLocation/ContactLocation";
+import ScheduleACall from "./ScheduleACall/ScheduleACall";
 
  
 
 const ContactPage = () => {
     return (
-        <div>
-            ContactPage
+        <div className="pt-24 max-w-6xl mx-auto px-6" >
+           <ContactForm />
+            <ScheduleACall />
 
             <ContactLocation />
         </div>
@@ -13,3 +16,5 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+// 
