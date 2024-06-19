@@ -1,15 +1,30 @@
-import image from '../../assets/joinforum.png';
+import Lottie from 'react-lottie';
+import Art3 from '../../assets/header.json';
 import HeroButton from '../Button/HeroButton';
 const Hero = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Art3,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
   return (
-    <div className="card    rounded-none  bg-base-200   image-full">
-      <figure className="rounded-none  opacity-10">
+    <div className="card    rounded-none  bg-base-100   image-full"> 
+
+      {/* <figure className="rounded-none  opacity-70">
+
+        
         <img
           className="w-full  max-h-[600px] rounded-none"
           src="https://www.tributemedia.com/hubfs/Social%20media%20agency-social.jpg"
           alt=" "
         />
-      </figure>
+      </figure> */}
+      <div>
+ 
+      </div>
       <div className="card-body md:flex-row flex-col-reverse items-center max-w-6xl mx-auto gap-6 ">
          
          <div className="flex flex-col gap-6">
@@ -19,7 +34,8 @@ const Hero = () => {
         <HeroButton /> 
          </div> 
         <div className="card-actions w-1/2 justify-end">
-       <img src={image} alt="" />
+        <Lottie options={defaultOptions} height={400} width={400} />
+
         </div>
       </div>
     </div>

@@ -55,8 +55,8 @@ function NavListMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = navListMenuItems.map(
     ({ icon, title, description }, key) => (
-      <a href="#" key={key}>
-        <MenuItem className="flex flex-row items-center gap-3 rounded-lg">
+      <Link href="#" key={key}>
+        <MenuItem className="flex flex-row items-center gap-3 rounded-lg ">
           <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-1 ">
             {React.createElement(icon, {
               strokeWidth: 2,
@@ -79,7 +79,7 @@ function NavListMenu() {
             </Typography>
           </div>
         </MenuItem>
-      </a>
+      </Link>
     )
   );
 
@@ -159,7 +159,28 @@ function NavList() {
             <Link to='/portfolio-item'>portfolio-item</Link>
           </li>
           <li>
-            <a>I</a>
+            <Link to='/blog-item'>Blog Items</Link>
+          </li>
+          <li>
+            <Link to='/blog'>Blog</Link>
+          </li>
+          <li>
+            <Link to='/about-us'>About Us</Link>
+          </li>
+          <li>
+            <Link to='/why-us'>Why-us</Link>
+          </li>
+          <li>
+            <Link to='/mission'>Mission And Vision</Link>
+          </li>
+          <li>
+            <Link to='/faq'>FAQ</Link>
+          </li>
+          <li>
+            <Link to='/login'>Log In</Link>
+          </li>
+          <li>
+            <Link to='/dashboard/profile'>Dashboard Home</Link>
           </li>
         </ul>
       </details>
