@@ -5,12 +5,13 @@ import NavControl from "../../share/NavControl/NavControl";
 
 const Root = () => {
   return (
-    <div>
+    <div className="text-neutral">
       <NavControl />
       <Outlet />
+      {/* footer start */}
       <div className="bg-base-content px-6">
         <Footer />
-        <div className="divider divider-neutral"></div>
+        <div className="divider h-0 p-0 divider-neutral"></div>
         <Footer2 />
       </div>
     </div>

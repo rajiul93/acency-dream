@@ -1,18 +1,22 @@
-import { MdCheckBoxOutlineBlank } from "react-icons/md";
- 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+import { FaRegHandPointRight } from "react-icons/fa";
+AOS.init();
 
-const OutsourceContent = () => {
+const OutsourceContent = ({item}) => {
     return (
-        <div className="flex items-start gap-3 mt-8">
+        <div
+     data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom"
+         className="flex items-start gap-3 mt-8">
         <div>
-          <MdCheckBoxOutlineBlank className="text-2xl text-warning " />
+          <FaRegHandPointRight className="text-2xl text-info " />
         </div>
         <div className="space-y-4">
-          <h1 className="text-xl font-semibold">14+ Years of Experience</h1>
-          <p>
-            Uniquely provide access to resource maximizing deliverables after
-            superior ideas. Conveniently pursue out-of-the-box schemas through
-            high-quality systems. Energistically enable.
+          <h1 className="text-[18px] font-semibold">{item?.title}</h1>
+          <p> 
+      {item?.content}
           </p>
         </div>
       </div>

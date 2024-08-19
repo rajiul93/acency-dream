@@ -1,10 +1,18 @@
+import { Helmet } from "react-helmet";
 import { FaForward } from "react-icons/fa6";
 import BlogItemVBannerButton from "../../../component/Button/BlogItemVBannerButton";
+import ScrollToTop from "../../../share/ScrollToTop/ScrollToTop";
 import Contact from "../../Home/Contact/Contact";
 import BlogItemTab from "./BlogItemTab/BlogItemTab";
 const BlogItemPage = () => {
   return (
     <div className=" max-w-6xl mx-auto my-24 px-6">
+             <Helmet>
+        <meta charSet="utf-8" />
+        <title>Dream | Blog</title>
+      </Helmet>
+      <ScrollToTop />
+
       <div className="card border-none shadow-none glass md:flex-row-reverse">
         <figure className="md:w-1/2 rounded-none">
           <img

@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const ScheduleMeetingButton2 = () => {
   return (
-    <a
-      href="#_"
+    <Link
+      to="/contact"
       className="
       inline-flex items-center justify-center h-12 px-10 py-0 mt-4
        text-xl font-semibold text-center text-gray-200 no-underline 
@@ -9,8 +11,8 @@ const ScheduleMeetingButton2 = () => {
         border-2 border-info  border-solid rounded-full cursor-pointer select-none
          hover:text-white hover:border-white focus:shadow-xs focus:no-underline"
     >
-      Button Text
-    </a>
+      Contact Us
+    </Link>
   );
 };
 

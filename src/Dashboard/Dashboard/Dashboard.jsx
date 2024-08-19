@@ -1,17 +1,18 @@
 import { Drawer, IconButton } from "@material-tailwind/react";
 import React from "react";
-import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { FiSidebar } from "react-icons/fi";
 import { NavLink, Outlet } from "react-router-dom";
+import Logout from "../../utils/Logout";
 
 const Dashboard = () => {
   const [open, setOpen] = React.useState(false);
 
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
+
   return (
     <div>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 text-neutral">
         <div className="h-screen flex overflow-hidden bg-gray-200">
           <React.Fragment>
             <Drawer
@@ -20,7 +21,7 @@ const Dashboard = () => {
               className="p-4 bg-neutral"
             >
               <div className="mb-6 flex items-center justify-between text-base-100">
-                <h1 className="text-xl font-semibold">MD. RAJIUL ISLAM</h1>
+                <h1 className="text-xl font-semibold uppercase">Our Dream Gol</h1>
                 <IconButton
                   variant="text"
                   color="blue-gray"
@@ -46,38 +47,49 @@ const Dashboard = () => {
               <div className="p-4">
 
                 <ul className="mt-4 ">
-                  <li className="mb-2">
+                  <li
+              
+
+                   className="mb-2">
                     <NavLink
-                      to="/dashboard/profile"
+                      to="/dashboard"
+                      onClick={closeDrawer}
                       className="block text-base-100 hover:text-indigo-400"
                     >
-                      PROFILE
+                      Dashboard
                     </NavLink>
                   </li>
                   <li className="mb-2">
                     <NavLink
                       to="/dashboard/product"
+                      onClick={closeDrawer}
+
                       className="block text-base-100 hover:text-indigo-400"
                     >
-                      Product
+                  Items customized
                     </NavLink>
                   </li>
                   <li className="mb-2">
                     <NavLink
                       to="/dashboard/users"
+                      onClick={closeDrawer}
+
                       className="block text-base-100 hover:text-indigo-400"
                     >
-                      Users
+                     Message
                     </NavLink>
                   </li>
                   <li className="mb-2">
                     <NavLink
-                      to="/dashboard/account"
+                      to="/dashboard/post"
+                      onClick={closeDrawer}
+
                       className="block text-base-100 hover:text-indigo-400"
                     >
-                      Account
+                      Create New
                     </NavLink>
                   </li>
+               
                   <li className="mb-2">
                     <NavLink
                       to="/"
@@ -103,7 +115,7 @@ const Dashboard = () => {
                   >
                     <FiSidebar className="text-2xl text-neutral hover:text-warning" />
                   </button>
-                 <button className="flex gap-3 items-center text-error">Log Out <FaArrowRightFromBracket /></button>
+                 <Logout />
                  </div>
                 </div>
               </div>

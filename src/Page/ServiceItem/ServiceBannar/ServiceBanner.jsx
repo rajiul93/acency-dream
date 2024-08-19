@@ -1,4 +1,6 @@
-const ServiceBanner = () => {
+import { Link } from "react-router-dom";
+
+const ServiceBanner = ({title,sortDes,name}) => {
   return (
     <div
       className="w-full min-h-[70vh] relative pt-20 bg-no-repeat bg-cover object-cover "
@@ -13,7 +15,7 @@ const ServiceBanner = () => {
         <div className="text-sm breadcrumbs p-6">
           <ul>
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <a>Service</a>
@@ -23,16 +25,10 @@ const ServiceBanner = () => {
         <div className="w-2/3 space-y-6 p-6">
           <h1 className="lg:text-4xl font-semibold">
             {" "}
-            Web Scraping Service -Data <br />
-            collection Solution
+           {title}{name}
           </h1>
           <p className="font-sans">
-            Phosfluorescently simplify virtual results before exceptional
-            catalysts for change. Collaboratively syndicate out-of-the-box
-            synergy without innovative vortals. Appropriately disintermediate
-            granular content with collaborative technologies. Appropriately
-            implement functionalized infomediaries after magnetic quality
-            vectors. Credibly incentivize cross.
+           {sortDes}
           </p>
           <button className="btn btn-outline btn-info">Get Start</button>
         </div>

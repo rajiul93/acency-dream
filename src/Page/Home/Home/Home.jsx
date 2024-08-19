@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet";
 import Hero from "../../../component/Hero/Hero";
+import ScrollToTop from "../../../share/ScrollToTop/ScrollToTop";
 import AboutUs from "../AboutUs/AboutUs";
 import Contact from "../Contact/Contact";
 import Fact from "../Fact/Fact";
@@ -10,16 +12,23 @@ import TrustedUs from "../TrustedUs/TrustedUs";
 
 const Home = () => {
   return (
-    <div className="pt-14  ">
+    <div className="pt-14   ">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>BeTechLab</title>
+      </Helmet>
+      <ScrollToTop />
       <Hero />
+   
       <Services />
       <WhatWeDo />
+
       <Product />
       <Outsource />
       <Fact />
-      <Contact />
-      <TrustedUs />
+      <TrustedUs /> 
       <AboutUs />
+      <Contact />
     </div>
   );
 };

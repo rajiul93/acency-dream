@@ -2,98 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-
  
-.curved-bg{
+:root, [data-theme] {
+  background-color: var(--fallback-b1, oklch(0.5 /1));
+  color: oklch(0.82 0 0);
+}
+
+
+
+
+
+.active{
+  color: #10b3f0;
+}
+.curved-bg {
   position: relative;
   overflow: hidden;
 }
- 
 
 .curved-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat ;
+  background-repeat: no-repeat;
   background-size: cover;
   background-image: url("https://st3.depositphotos.com/1010710/12735/i/450/depositphotos_127357718-stock-photo-customer-service-representative-using-laptop.jpg");
-/* Replace with your background color */
+  /* Replace with your background color */
   clip-path: ellipse(150% 100% at 50% 0%);
 }
-
-.curved{
-  content: '';
+.css-13cymwt-control{ 
+  border-color:#fff !important;
+}
+.curved {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat ;
-  background-size: cover; 
+  background-repeat: no-repeat;
+  background-size: cover;
   clip-path: ellipse(150% 100% at 50% 0%);
 }
-
-
-
-
 
 /* blog item page css */
 .react-tabs__tab--selected{
-  border: none; 
+  border: 2px solid tomato; 
+  border-radius: 10px;
   color: red;
-}
-
-.card-font{
-  font-family: "PT Sans", sans-serif;
-}
-.about-font{
-  font-family: "Roboto Condensed", sans-serif;
-}
-body{
-  font-family: "Poppins", sans-serif;
-  background-color: rgba(248, 249, 249, 0.479);
+  margin-bottom: 10px;
+  padding: 4;
  
 }
- .service{
-  box-shadow: 4px 12px 47px 0 rgba(0,0,0,0.1);
- }
- a.active{
+
+ 
+.react-tabs__tab--selected::after {
+  content: "";
+
+  width: 0;
+}
+ 
+/* ................................... */
+.card-font {
+  font-family: "PT Sans", sans-serif;
+}
+.about-font {
+  font-family: "Roboto Condensed", sans-serif;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+}
+.service {
+  box-shadow: 4px 12px 47px 0 rgba(0, 0, 0, 0.1);
+}
+a.active {
   font-size: 18px;
-  font-weight: 500; 
-  
-  color:#10b3f0 ;
- }
- .card.image-full:before{
+  font-weight: 500;
+
+  color: #10b3f0;
+}
+.card.image-full:before {
   border-radius: 0px;
-  opacity: .10;
- }
- .card-button{
-  transform: translateY(150px);
-  transition: all .2s ease-out;
- }
-
- .card:hover .card-button{
-  transform: translateX(0px);
-  transition: all .2s ease-out;
-  border-bottom: 2px solid wheat;
-  
- }
- .card-content{
-  transform: translateX(450px);
-  transition: all .5s ease-out;
- }
- .card:hover .card-content{
-  transform: translateX(0px);
-  transition: all .5s ease-out;
- }
- .card:hover .cad-bg-image{
-
-  transform: translate(120px, 20%) scale(2.2);
-  transition: all .8s ease-in-out;
   opacity: 0;
+}
+.card-button {
+  transform: translateY(150px);
+  transition: all 0.2s ease-out;
+}
 
+.card:hover .card-button {
+  transform: translateX(0px);
+  transition: all 0.2s ease-out; 
+}
+.card-content {
+  transform: translateX(450px);
+  transition: all 0.5s ease-out;
+}
+.card:hover .card-content {
+  transform: translateX(0px);
+  transition: all 0.5s ease-out;
+}
+.card:hover .cad-bg-image {
+  transform: translate(120px, 20%) scale(2.2);
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+}
+.contact-bg{
+  /* background-image: url(); */
+  background-position: center;
+  background-size: cover;
+}
 
- }
+.schedule-meting{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+
+/* dashboard css  */
+
+.dashboard-home-card{
+  @apply card w-96 bg-gradient-to-r from-info to-indigo-500 text-primary-content
+}
+
+/* dashboard css  */
+ 
+ 

@@ -1,38 +1,63 @@
+import { useState } from "react";
+
 const PageBannerTitle = () => {
+  const [praOne, setPraOne] = useState(false);
+
   return (
     <div
-    className="w-full min-h-[70vh] relative pt-20 bg-no-repeat bg-cover object-cover curved-bg " >
-    <div className="z-0 bg-gradient-to-r from-[#0f172a] top-0 to-[#374151] curved w-full h-full opacity-80 absolute"></div>
-    <div className="z-20 relative text-base-100 max-w-6xl mx-auto lg:p-14  ">
-      {/* title link */}
-      <div className="text-sm breadcrumbs p-6">
-        <ul>
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Service</a>
-          </li>
-        </ul>
-      </div>
-      <div className="w-2/3 space-y-6 p-6">
-        <h1 className="lg:text-4xl font-semibold">
-          {" "}
-          Web Scraping Service -Data <br />
-          collection Solution
+      className="items-center lg:min-h-[50vh] px-6  max-w-6xl grid-cols-2 mx-auto overflow-hidden lg:grid md:py-14 lg:pt-24 xl:py-14 lg:mt-3 xl:mt-5"
+  
+    >
+      <div className="pr-2 md:mb-14 py-14 md:py-0">
+        <h1 className="text-3xl font-semibold text-info xl:text-5xl lg:text-3xl">
+          About Us
         </h1>
-        <p className="font-sans">
-          Phosfluorescently simplify virtual results before exceptional
-          catalysts for change. Collaboratively syndicate out-of-the-box
-          synergy without innovative vortals. Appropriately disintermediate
-          granular content with collaborative technologies. Appropriately
-          implement functionalized infomediaries after magnetic quality
-          vectors. Credibly incentivize cross.
+        <p className="py-4 text-lg text-gray-500 2xl:py-8 md:py-6 2xl:pr-5">
+          <p>
+            At Betechlab, we are passionate about crafting innovative technology
+            solutions that drive business growth and success. With over a decade
+            of proven experience, our dedicated team of experts brings a wealth
+            of knowledge and creativity to every project.
+            <span
+              onClick={() => setPraOne(true)}
+              className={`text-info ms-4 cursor-pointer ${
+                praOne ? "hidden" : ""
+              }`}
+            >
+              read more...
+            </span>
+            <span className={praOne ? "block" : "hidden"}>
+              We specialize in delivering personalized services that meet the
+              unique needs of each client, from software development to
+              comprehensive IT consulting. Our commitment to excellence and
+              customer satisfaction sets us apart, making Betechlab your trusted
+              partner in navigating the ever-evolving tech landscape. Join us as
+              we continue to push the boundaries of what's possible and
+              transform your ideas into impactful realities.
+            </span>
+          </p>
         </p>
-        <button className="btn btn-outline btn-info">Get Start</button>
+      
       </div>
+      <div className="flex items-center   ">
+        <div className="px-6 h-96 lg:h-100% w-full max-w-2xl col-span-6 flex items-center mx-auto ">
+          <div style={{ width: "100%", height: "100%" }} >
+            <div style={{ width: "100%", height: "100%" }} >
+              <video
+              className="border-4"
+                controls
+                width="100%"
+                height="100%"
+                src="http://betechlab.com/video/about-us.mp4"
+                title="Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
     </div>
-  </div>
   );
 };
 

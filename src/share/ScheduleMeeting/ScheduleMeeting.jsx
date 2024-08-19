@@ -7,7 +7,7 @@ const ScheduleMeeting = () => {
     <section className="max-w-5xl mx-auto  my-14 bg-neutral p-6 text-base-100 ">
       <div className="md:flex justify-between items-center">
         <div className="border-l pl-2 border-info">
-          <h1>Ready to being building your custom software?</h1>
+          <h1>Are you ready to build a project / solution?</h1>
         </div>
         <div className="md:flex  gap-4 items-center">
           <div className="p-2">
