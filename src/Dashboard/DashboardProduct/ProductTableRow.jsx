@@ -4,9 +4,9 @@ import { FaEdit } from "react-icons/fa";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 const ProductTableRow = ({ product,handleDelete }) => {
-  const { firstTitle, imageUrl1, listOne1, _id ,dataType,category} = product;
+  const { pageTitle, imageUrl1, listOne1, _id ,dataType,category,url} = product;
 
-
+ 
 
   return (
     <tr>
@@ -18,7 +18,7 @@ const ProductTableRow = ({ product,handleDelete }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{firstTitle}</div>
+            <div className="font-bold">{pageTitle}</div>
             <div className="text-sm opacity-50">{category}</div>
           </div>
         </div>
@@ -33,18 +33,18 @@ const ProductTableRow = ({ product,handleDelete }) => {
         />
       </td>
       <td>
-       <Link to={`/dashboard/update/${_id}`}>
+       <Link to={`/dashboard/update/${url}`}>
        <FaEdit className="text-xl" />
        </Link>
       </td>
       <th>
-       {dataType==="service" && <Link to={`/service-item/${_id}`} className="">
+       {dataType==="service" && <Link to={`/service-item/${url}`} className="">
           <BiDetail className="text-xl" />
         </Link>}
-       {dataType==="portfolio" && <Link to={`/portfolio-item/${_id}`} className="">
+       {dataType==="portfolio" && <Link to={`/portfolio-item/${url}`} className="">
           <BiDetail className="text-xl" />
         </Link>}
-       {dataType==="product" && <Link to={`/product-items/${_id}`} className="">
+       {dataType==="product" && <Link to={`/product-items/${url}`} className="">
           <BiDetail className="text-xl" />
         </Link>}
     

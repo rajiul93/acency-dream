@@ -48,7 +48,7 @@ const PageBannerTitle = () => {
                 controls
                 width="100%"
                 height="100%"
-                src="http://betechlab.com/video/about-us.mp4"
+                src="https://betechlab.com/video/about-us.mp4"
                 title="Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></video>

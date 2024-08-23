@@ -13,7 +13,7 @@ const BlogPage = () => {
         <div className=" max-w-6xl mx-auto my-24 px-6">
                   <Helmet>
         <meta charSet="utf-8" />
-        <title>Dream | Blog</title>
+        <title>BeTechLab | Blog</title>
       </Helmet>
       <ScrollToTop />
 

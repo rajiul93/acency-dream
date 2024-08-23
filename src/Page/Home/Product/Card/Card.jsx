@@ -2,15 +2,18 @@ import PropTypes from 'prop-types';
 
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-const Card = ({item}) => {
+const Card = ({item,card_bg}) => {
+ 
+ 
   return (
     <div className="card card-font shadow-lg bg-[#002366] min-h-72 rounded-none hover:scale-105 duration-300 ease-in-out  shadow-xl image-full overflow-hidden">
       <figure className="cad-bg-image">
-        <img
-          src="https://betechlab.com/image/product/product-bg.png"
-          className="opacity-80"
-          alt="Shoes"
-        />
+         <img
+        src={card_bg}
+        className="opacity-80"
+        alt="Shoes"
+      />
+     
       </figure>
       {/* <div className="bg-"></div> */}
       <div className="card-body ">
@@ -23,7 +26,7 @@ const Card = ({item}) => {
           whose shoes does he choose?
         </p>
         <div className="card-actions justify-end">
-          <Link to={`/product-items/${item?._id}`} >
+          <Link to={`/product-items/${item?.url}`} >
           
           <button className="card-button text-info text-white  flex gap-2 items-center">View Details<FaArrowRightFromBracket className="text-accent" /> </button>
           </Link>

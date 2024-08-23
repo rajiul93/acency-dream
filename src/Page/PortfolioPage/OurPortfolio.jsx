@@ -19,6 +19,7 @@ const OurPortfolio = () => {
     },
   });
   if (isLoading) <Loading />;  
+ const card_bg="https://betechlab.com/image/portfolio/portfolio-bg.png"
   
   return (
     <section className="max-w-6xl mx-auto  px-6 ">
@@ -36,24 +37,24 @@ const OurPortfolio = () => {
           <TabPanel className="  gap-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
            
            {
-            data.map((item, index)=><Card  key={index} item={item}/>)
+            data.map((item, index)=><Card card_bg={card_bg}  key={index} item={item}/>)
            }
           
            
           </TabPanel>
           <TabPanel className="  gap-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {
-            data.map((item, index)=><Card  key={index} item={item}/>)
+            data.map((item, index)=><Card  card_bg={card_bg} key={index} item={item}/>)
            }
           </TabPanel>
           <TabPanel className="  gap-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {
-            data.map((item, index)=><Card  key={index} item={item}/>)
+            data.map((item, index)=><Card card_bg={card_bg}  key={index} item={item}/>)
            }
           </TabPanel>
           <TabPanel className="  gap-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {
-            data.map((item, index)=><Card  key={index} item={item}/>)
+            data.map((item, index)=><Card  card_bg={card_bg} key={index} item={item}/>)
            }
           </TabPanel>
           

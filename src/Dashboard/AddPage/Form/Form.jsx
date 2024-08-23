@@ -43,6 +43,7 @@ const Form = () => {
     const url = data.page_url;
     const seo= data.seo;
     const videoUrl1 = data.videoUrl1;
+    const videoContent = data.videoContent;
     const category = data.category;
     const dataType = data.dataType;
     const description1 = data.description1;
@@ -85,6 +86,7 @@ const Form = () => {
       top_list,
       category,
       videoUrl1,
+      videoContent,
       dataType,
       description1,
       description2,
@@ -467,7 +469,7 @@ const Form = () => {
               </div>
               {video && (
                 <>
-                  {" "}
+               
                   <div className="col-span-6 sm:col-span-3">
                     <label
                       htmlFor="brand"
@@ -480,11 +482,24 @@ const Form = () => {
                       className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                       {...register("videoUrl1")}
                     />
-                    {errors.videoUrl1 && (
-                      <span className="text-error">This field is required</span>
-                    )}
+                    
                   </div>
-                  <div className="col-span-6 sm:col-span-3">{/*  */}</div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="video-content"
+                      className="text-sm font-medium text-gray-900 block mb-2"
+                    >
+                      Video Content
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Your video content paragraph "
+                      className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                      {...register("videoContent")}
+                    />
+                    
+                  </div>
+                  
                 </>
               )}
 

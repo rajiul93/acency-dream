@@ -65,7 +65,7 @@ const WhatWeDo = () => {
               <span className="text-info"> Quality Service Delivery.</span>
             </h1>
 
-            <p>
+            <p >
               At Betechlab, we leverage over 10 years of trusted expertise to
               deliver top-notch technology solutions that drive business
               success. Our skilled team specializes in a wide array of services,

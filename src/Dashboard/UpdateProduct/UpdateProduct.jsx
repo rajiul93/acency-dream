@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import { errorMessage } from "../../utils/errorMessage";
@@ -7,9 +6,11 @@ import { successMessage } from "../../utils/successMessage";
 
 const UpdateProduct = () => {
   const loadData = useLoaderData();
-  const [video, setVideo] = useState(null);
+  
+ 
 
-  const id = loadData._id;
+
+  const url = loadData.url;
   const categoryItems = [
     {
       title: "Website Scraping",
@@ -44,8 +45,10 @@ const UpdateProduct = () => {
   } = useForm();
   const onSubmit = async (data) => {
     const url = data.page_url;
-    const seo= data.seo;
+    const seo = data.seo;
     const videoUrl1 = data.videoUrl1;
+    const videoContent = data.videoContent;
+
     const category = data.category;
     const dataType = data.dataType;
     const description1 = data.description1;
@@ -62,7 +65,14 @@ const UpdateProduct = () => {
     const top_list_4 = data.top_list_4;
     const top_list_5 = data.top_list_5;
     const top_list_6 = data.top_list_6;
-    const top_list = [  top_list_1,top_list_2,top_list_3,top_list_4,top_list_5,top_list_6];
+    const top_list = [
+      top_list_1,
+      top_list_2,
+      top_list_3,
+      top_list_4,
+      top_list_5,
+      top_list_6,
+    ];
 
     const list_title_one = data.list_title_one;
     const listOne1 = data.listOne1;
@@ -82,13 +92,34 @@ const UpdateProduct = () => {
     const pageSortDesc = data.pageSortDesc;
     const pageTitle = data.pageTitle;
     const secondTitle = data.secondTitle;
-    const newData = {url,seo,category,videoUrl1,top_list_title,top_list,list_title_one,list_title_two,
-      topListDescription, dataType,description1,description2,firstTitle,imageUrl1,imageUrl2,pageSortDesc,
-      pageTitle,secondTitle,listOne,listTwo,};
-    console.log(newData);
+    const newData = {
+      url,
+      seo,
+      category,
+      videoUrl1,
+      top_list_title,
+      top_list,
+      list_title_one,
+      list_title_two,
+      videoContent,
+      topListDescription,
+      dataType,
+      description1,
+      description2,
+      firstTitle,
+      imageUrl1,
+      imageUrl2,
+      pageSortDesc,
+      pageTitle,
+      secondTitle,
+      listOne,
+      listTwo,
+    };
+     
+
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_API}/product/change/${id}`,
+        `${import.meta.env.VITE_API}/product/change/${url}`,
         newData,
         { withCredentials: true }
       );
@@ -99,10 +130,12 @@ const UpdateProduct = () => {
       errorMessage("Your Request Fail");
     }
   };
+ 
   if (Object.keys(loadData).length === 0) {
     console.log(Object.keys(loadData).length);
     return <>You age going something wrong</>;
   }
+ 
   return (
     <div>
       <div className="bg-white border border-4 rounded-lg shadow relative m-10">
@@ -147,7 +180,8 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   className="grow"
-                  {...register("page_url",{required:true})}
+                  defaultValue={loadData?.url}
+                  {...register("page_url", { required: true })}
                   placeholder="Don't use empty space"
                 />
                 {errors.page_url && (
@@ -159,25 +193,21 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   className="grow"
-                  {...register("seo",{required:true})}
+                  defaultValue={loadData?.seo}
+                  {...register("seo", { required: true })}
                   placeholder="enter your seo keyword"
                 />
                 {errors.seo && (
                   <span className="text-error">This field is required</span>
                 )}
               </label>
+
               <select
                 className="select select-primary   max-w-xs"
-                defaultValue={loadData?.category}
-                {...register("category", { required: true })}
+                defaultValue={loadData?.category || "Website Scraping"}
+                {...register("category")}
               >
-                {errors.category && (
-                  <span className="text-error">This field is required</span>
-                )}
-
-                <option disabled value="">
-                  Select your category
-                </option>
+             
                 {categoryItems.map((category, index) => (
                   <option key={index} value={category.title}>
                     {category.title}
@@ -185,24 +215,10 @@ const UpdateProduct = () => {
                 ))}
               </select>
               <select
-                defaultValue=""
+                defaultValue={loadData?.dataType || "portfolio"}
                 className="select select-primary max-w-xs"
-                {...register("dataType", { required: true })}
-                onChange={(e) => {
-                  const selectedValue = e.target.value;
-                  if (selectedValue === "product") {
-                    setVideo(true);
-                  } else {
-                    setVideo(false);
-                  }
-                }}
+                {...register("dataType")}
               >
-                {errors.dataType && (
-                  <span className="text-error">This field is required</span>
-                )}
-                <option disabled value="">
-                  Select your Data Type
-                </option>
                 <option value="portfolio">Portfolio</option>
                 <option value="service">Service Item</option>
                 <option value="product">Product Items</option>
@@ -279,8 +295,6 @@ const UpdateProduct = () => {
                   defaultValue={loadData?.firstTitle}
                   {...register("firstTitle")}
                 />
-            
-
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
@@ -326,7 +340,6 @@ const UpdateProduct = () => {
                   type="text"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                 />
-                
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
@@ -341,7 +354,6 @@ const UpdateProduct = () => {
                   type="text"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                 />
-              
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
@@ -370,7 +382,6 @@ const UpdateProduct = () => {
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                   {...register("listOne2")}
                 />
-              
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
@@ -485,7 +496,6 @@ const UpdateProduct = () => {
                   defaultValue={loadData?.imageUrl1}
                   {...register("imageUrl1")}
                 />
-               
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
@@ -500,11 +510,9 @@ const UpdateProduct = () => {
                   defaultValue={loadData?.imageUrl2}
                   {...register("imageUrl2")}
                 />
-               
               </div>
-              {video && (
+              {loadData.dataType === "product" && (
                 <>
-                  {" "}
                   <div className="col-span-6 sm:col-span-3">
                     <label
                       htmlFor="brand"
@@ -519,7 +527,21 @@ const UpdateProduct = () => {
                       {...register("videoUrl1")}
                     />
                   </div>
-                  <div className="col-span-6 sm:col-span-3"></div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="video-content"
+                      className="text-sm font-medium text-gray-900 block mb-2"
+                    >
+                      Video Content
+                    </label>
+                    <input
+                      type="text"
+                      defaultValue={loadData.videoContent}
+                      placeholder="Your video content paragraph "
+                      className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                      {...register("videoContent")}
+                    />
+                  </div>
                 </>
               )}
 
@@ -538,7 +560,6 @@ const UpdateProduct = () => {
                   defaultValue={loadData?.description1}
                   {...register("description1")}
                 ></textarea>
-              
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
@@ -555,7 +576,6 @@ const UpdateProduct = () => {
                   defaultValue={loadData?.description2}
                   {...register("description2")}
                 ></textarea>
-                
               </div>
             </div>
             <button

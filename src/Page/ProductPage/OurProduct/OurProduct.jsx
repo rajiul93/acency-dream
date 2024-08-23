@@ -19,10 +19,10 @@ const OurProduct = () => {
     },
   });
   if (isLoading) <Loading />;  
-  
+  const card_bg = "https://betechlab.com/image/product/product-bg.png";
+  console.log(data)
   return (
-    <section className="max-w-6xl mx-auto  px-6 ">
-      {/* <SectionTitle title="product" /> */}
+    <section className="max-w-6xl mx-auto  px-6 "> 
       <div className="">
         <Tabs>
           <TabList className='border-none mb-8 flex py-2 justify-center gap-4  ' classID="">
@@ -36,7 +36,7 @@ const OurProduct = () => {
           <TabPanel className="  gap-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
            
            {
-            data.map((item, index)=><Card  key={index} item={item}/>)
+            data.map((item, index)=><Card card_bg={card_bg} key={index} item={item}/>)
            }
           
            

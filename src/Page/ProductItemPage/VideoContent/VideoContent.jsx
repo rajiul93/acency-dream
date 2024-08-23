@@ -19,12 +19,7 @@ const VideoContent = ({ loadData }) => {
       </div>
       <div className="w-full px-6 mt-6 md:mt-0  ">
         <p className="text-justify">
-          Efficiently productivate client-based niche markets for plug-and-play
-          initiatives. Efficiently evolve exceptional web services after
-          pandemic meta-services. Continually expedite seamless metrics after
-          scalable opportunities. Seamlessly cultivate stand-alone processes
-          without virtual convergence. Intrinsicly generate covalent vortals
-          through state.
+          {loadData?.videoContent} 
         </p>
       </div>
     </div>

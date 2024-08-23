@@ -23,8 +23,7 @@ const ServiceBanner = ({title,sortDes,name}) => {
           </ul>
         </div>
         <div className="w-2/3 space-y-6 p-6">
-          <h1 className="lg:text-4xl font-semibold">
-            {" "}
+          <h1 className="lg:text-4xl font-semibold"> 
            {title}{name}
           </h1>
           <p className="font-sans">

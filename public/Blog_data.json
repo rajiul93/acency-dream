@@ -1,0 +1,42 @@
+[
+    {
+        "url_id": "python-web-scraping",
+        "tab_title": "Python Web Scraping1",
+        "meta_tag": "Python, scraping",
+        "image": "https://betechlab.com/image/blog/python-web-scraping.jpg",
+        "header_title": "Web Scraping With Python",
+        "para_1": "In the future, data will increase daily, and we need a data handling method. There...",
+        "list_title": "Why you need this?",
+        "list_options": ["Remove manual work and save time and cost.","Automate process and can handle everything at any time.", "Business growing."],
+        "para_2": "Day by day technology changes and new challenges come, but python do its work on it's own way.",
+        "para_3": "We can export our data in any format using python. Even we can do automate process by this.",
+        "para_4": "We are providing this service continuously. Have a vast work portfolio and our own products. If you are interested then let me know.",
+        "button_1_text": "Image Scraping Tool",
+        "button_1_link": "https://betechlab.com/product-items/tool",
+        "button_2_text": "Our Web Scraping Work",
+        "button_2_link": "https://www.fiverr.com/scraperlab",
+        "other_blog_1": "https://betechlab.com/blog-details/2",
+        "other_blog_2": "https://betechlab.com/blog-details/3",
+        "other_blog_3": "https://betechlab.com/blog-details/4"
+    },
+    {
+        "url_id": "python-web-scraping2",
+        "tab_title": "Python Web Scraping2",
+        "meta_tag": "Python, scraping",
+        "image": "https://betechlab.com/image/blog/python-web-scraping.jpg",
+        "header_title": "Web Scraping With Python",
+        "para_1": "In the future, data will increase daily, and we need a data handling method. There...",
+        "list_title": "Why you need this?",
+        "list_options": ["Remove manual work and save time and cost.","Automate process and can handle everything at any times.", "Business growing."],
+        "para_2": "Day by day technology changes and new challenges come, but python do its work on it's own way.",
+        "para_3": "We can export our data in any format using python. Even we can do automate process by this.",
+        "para_4": "We are providing this service continuously. Have a vast work portfolio and our own products. If you are interested then let me know.",
+        "button_1_text": "Image Scraping Tool",
+        "button_1_link": "https://betechlab.com/product-items/tool",
+        "button_2_text": "Our Web Scraping Work",
+        "button_2_link": "https://www.fiverr.com/scraperlab",
+        "other_blog_1": "https://betechlab.com/blog-details/2",
+        "other_blog_2": "https://betechlab.com/blog-details/3",
+        "other_blog_3": "https://betechlab.com/blog-details/4"
+    }
+]

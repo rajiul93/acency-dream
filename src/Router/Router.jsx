@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
         path: "/portfolio-item/:id",
         element: <PortfolioItem />,
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_API}/single-data/${params.id}`),
+          fetch(`${import.meta.env.VITE_API}/product/single-data/${params.id}`),
       },
       {
         path: "/administration",

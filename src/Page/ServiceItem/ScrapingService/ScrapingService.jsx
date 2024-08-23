@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 const ScrapingService = ({ loadData}) => {
+  console.log(loadData)
  
   return (
     <div className="py-14 max-w-6xl mx-auto p-5">
