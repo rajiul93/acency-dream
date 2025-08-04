@@ -13,8 +13,7 @@ const BlogDetails = () => {
   }, [id]);
   if (!data.length) {
     return <div className="mt-24 text-center h-[20vh]">Loading</div>;
-  }
-  console.log(data);
+  } 
 
   const find_data = data?.find((i) => i.url_id == id);
   const otherBlog = data?.filter((i) => i.url_id !== id);
@@ -35,9 +34,7 @@ const BlogDetails = () => {
     button_1_link,
     button_2_text,
     button_2_link,
-    other_blog_1,
-    other_blog_2,
-    other_blog_3,
+   
   } = find_data; 
   return (
     <section className="max-w-6xl mx-auto">
@@ -59,26 +56,33 @@ const BlogDetails = () => {
             />
             <h2 className="text-4xl font-bold mt-4 mb-2">{header_title}</h2>
             <article className="text-gray-700 mb-4"> {para_1}</article>
-            <article className="text-gray-700 mb-4"> {para_2}</article>
-            <article className="text-gray-700 mb-4"> {para_3}</article>
-            <article className="text-gray-700 mb-4"> {para_4}</article>
-            <article className="mb-14">
-              <h1 className="text-xl font-semibold">{list_title}</h1>
-              <ul>
+            <h1 className="text-xl font-semibold">{list_title}</h1>
+              <ul className="mb-6">
                 {list_options?.map((e, i) => (
                   <li className="list-disc ms-7" key={i}>
                     {e}
                   </li>
                 ))}
               </ul>
+            <article className="text-gray-700 mb-4"> {para_2}</article>
+            <article className="text-gray-700 mb-4"> {para_3}</article>
+            <article className="text-gray-700 mb-4"> {para_4}</article>
+            <article className="mb-14">
+          
             </article>
-            <div className="md:flex justify-between">
+            <div className=" flex flex-col md:flex-row gap-4 justify-between">
+              <Link to={button_1_link}>
+              
               <button className="btn btn-outline">{button_1_text}</button>
+              </Link>
+              <Link to={button_2_link}>
+              
               <button className="btn btn-outline">{button_2_text}</button>
+              </Link>
             </div>
           </div>
           <div className="w-full md:w-4/12 px-4 mb-8">
-            <div className="bg-gray-100 px-4 py-6 rounded">
+            <div className="bg-red px-4 py-6 rounded">
               <h3 className="text-lg font-bold mb-2">Other Blog</h3>
               <ul className="list-disc list-inside">
                 {otherBlog?.map((e,i)=> <li key={i} className="list-none">

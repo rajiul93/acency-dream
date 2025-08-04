@@ -12,7 +12,7 @@ const WhyUs = () => {
         <div className="mt-24">
                    <Helmet>
         <meta charSet="utf-8" />
-        <title>Betechlab | Why Us</title>
+        <title>BeTechLab | Why Us</title>
       </Helmet>
       <ScrollToTop />
 

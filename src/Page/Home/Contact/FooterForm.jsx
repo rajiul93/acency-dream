@@ -1,13 +1,15 @@
- 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { CiMail } from "react-icons/ci";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
 import { FiMessageSquare } from "react-icons/fi";
 import { RiBarcodeBoxLine } from "react-icons/ri";
 import { contactForm } from "../../../utils/contactForm";
-const FooterForm = () => { 
-  const [loading, setLoading] = useState(true)
+
+const FooterForm = () => {
+  const [loading, setLoading] = useState(true);
+  const [contactControl, setContactControl] = useState(true)
+
   const options = [
     { value: "Website Scraping", label: "Website Scraping" },
     { value: "Custom Bot/Script", label: "Custom Bot/Script" },
@@ -17,15 +19,35 @@ const FooterForm = () => {
     { value: "Graphic Design", label: "Graphic Design" },
     { value: "Others", label: "Others" },
   ];
+
   const {
     register,
-    handleSubmit, 
+    handleSubmit,
+    reset,
     formState: { errors },
+    watch,
   } = useForm();
 
-  const onSubmit = (data,) => {
-    contactForm(data,setLoading)
-  }
+ 
+
+  const emailValue = watch("email");
+  const skypeValue = watch("skype_whatsApp");
+
+  
+  
+  useEffect(() => {
+    if (skypeValue?.length || emailValue?.length) {
+    return  setContactControl(false);
+    } else {
+     return setContactControl(true);
+    }
+  }, [skypeValue, emailValue]);
+
+  const onSubmit = (data) => {
+    contactForm(data, setLoading,reset);
+  };
+
+
 
   return (
     <div className="bg-base-100 w-full   border-4 rounded-lg shadow  ">
@@ -52,12 +74,12 @@ const FooterForm = () => {
                 <input
                   type="email"
                   className="grow focus:outline-none focus:border-transparent col-span-10"
-                  placeholder="Email"
-                  {...register("email", { required: true })}
+                  placeholder="Email" 
+                  {...register("email", { required: contactControl })}
                 />
               </div>
                 {errors.email && (
-                  <span className="text-error">This field is required</span>
+                  <span className="text-error">This field is required</span> 
                 )}
             </div>
 
@@ -85,10 +107,10 @@ const FooterForm = () => {
               <div className="focus:border-0 border-b border-b-blue-600 grid grid-cols-12 p-2">
                 <FiMessageSquare className="text-info text-xl col-span-2  " />
                 <input
-                  type="number"
+                  type="text"
                   className="grow focus:outline-none focus:border-transparent col-span-10"
                   placeholder="Skype / WhatsApp"
-                {...register("skype_whatsApp", { required: true })} 
+                {...register("skype_whatsApp", { required: contactControl })} 
                 />
                 
               </div>

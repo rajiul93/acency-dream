@@ -93,23 +93,23 @@ const FaqPage = () => {
       list: [],
     },
   ];
-  const image = "https://betechlab.com/image/faq.jpg"
-  
+  const image = "https://betechlab.com/image/faq.jpg";
+
   return (
     <div className="md:mt-24  min-h-[50vh] ">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Dream | FaqP age</title>
+        <title>BeTechLab | Faq Page</title>
       </Helmet>
       <ScrollToTop />
       <MissionHero image={image} />
 
-      <div className="max-w-6xl mx-auto mt-14">
+      <div className="max-w-6xl mx-auto  px-6 mb-14 lg:mb-24">
         {faq?.map((item, index) => {
           return (
             <Accordion key={index} open={open === index}>
               <AccordionHeader
-                className="justify-start gap-5"
+                className="justify-start gap-5 text-xs md:text-sm lg:text-md"
                 onClick={() => handleOpen(index)}
               >
                 {open === index ? <FaMinus /> : <FaPlus />} {item.question}
@@ -118,7 +118,9 @@ const FaqPage = () => {
                 <p className="text-[16px]">{item.answer}</p>
                 <br />
                 {item.list?.map((e, i) => (
-                  <li className="text-[16px]" key={i}>{e}</li>
+                  <li className="text-[16px]" key={i}>
+                    {e}
+                  </li>
                 ))}
               </AccordionBody>
             </Accordion>

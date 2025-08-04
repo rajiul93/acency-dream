@@ -1,7 +1,7 @@
 const DataCollection = ({ title2, content, topListDescription }) => {
   return (
     <div className="max-w-6xl  mx-auto p-6 space-y-6">
-      <div className="w-2/3">
+      <div className="md:w-2/3">
         <p className="text-2xl font-semibold">{title2}</p>
 
         <div className="mb-4">

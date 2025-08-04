@@ -1,6 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const ServiceBanner = ({title,sortDes,name}) => {
+const ServiceBanner = ({title,sortDes}) => {
+  const location = useLocation() 
+  const navigate = useNavigate()
+const currentLocation = location.pathname.split("/")[1];
+  const handleNavigate = ()=>{
+if (currentLocation === "service-item") {
+  return navigate("/service")
+}
+if (currentLocation === "product-items") {
+  return navigate("/product")
+}
+if (currentLocation === "portfolio-item") {
+  return navigate("/portfolio")
+}
+  }
   return (
     <div
       className="w-full min-h-[70vh] relative pt-20 bg-no-repeat bg-cover object-cover "
@@ -17,14 +31,16 @@ const ServiceBanner = ({title,sortDes,name}) => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <a>Service</a>
+            <li onClick={handleNavigate} className="cursor-pointer">
+              {currentLocation === "service-item" && <>Service</>}
+              {currentLocation === "product-items" && <>Product</>}
+              {currentLocation === "portfolio-item" && <>Portfolio</>}
             </li>
           </ul>
         </div>
-        <div className="w-2/3 space-y-6 p-6">
+        <div className="md:w-2/3 space-y-6 p-6">
           <h1 className="lg:text-4xl font-semibold"> 
-           {title}{name}
+           {title}
           </h1>
           <p className="font-sans">
            {sortDes}

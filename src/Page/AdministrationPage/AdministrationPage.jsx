@@ -11,7 +11,7 @@ const AdministrationPage = () => {
     <div className="max-w-6xl mx-auto">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Dream | Administration</title>
+        <title>BeTechLab | Administration</title>
       </Helmet>
       <ScrollToTop />
 

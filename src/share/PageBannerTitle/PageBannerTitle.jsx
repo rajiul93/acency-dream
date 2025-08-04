@@ -4,10 +4,7 @@ const PageBannerTitle = () => {
   const [praOne, setPraOne] = useState(false);
 
   return (
-    <div
-      className="items-center lg:min-h-[50vh] px-6  max-w-6xl grid-cols-2 mx-auto overflow-hidden lg:grid md:py-14 lg:pt-24 xl:py-14 lg:mt-3 xl:mt-5"
-  
-    >
+    <div className="items-center lg:min-h-[50vh] px-6 mb-10 md:mb-0 max-w-6xl grid-cols-2 mx-auto overflow-hidden lg:grid md:py-14 lg:pt-24 xl:py-14 lg:mt-3 xl:mt-5">
       <div className="pr-2 md:mb-14 py-14 md:py-0">
         <h1 className="text-3xl font-semibold text-info xl:text-5xl lg:text-3xl">
           About Us
@@ -37,14 +34,13 @@ const PageBannerTitle = () => {
             </span>
           </p>
         </p>
-      
       </div>
       <div className="flex items-center   ">
-        <div className="px-6 h-96 lg:h-100% w-full max-w-2xl col-span-6 flex items-center mx-auto ">
-          <div style={{ width: "100%", height: "100%" }} >
-            <div style={{ width: "100%", height: "100%" }} >
+        <div className="px-6  lg:h-100% w-full max-w-2xl col-span-6 flex items-center mx-auto ">
+          <div style={{ width: "100%", height: "100%" }}>
+            <div style={{ width: "100%", height: "100%" }}>
               <video
-              className="border-4"
+                className="border-4"
                 controls
                 width="100%"
                 height="100%"
@@ -56,7 +52,6 @@ const PageBannerTitle = () => {
           </div>
         </div>
       </div>
- 
     </div>
   );
 };

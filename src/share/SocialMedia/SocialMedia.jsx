@@ -9,10 +9,10 @@ const SocialMedia = () => {
         <TfiEmail className="text-xl" />info@betechlab.com
       </p>
       <p className="flex items-center  gap-4">
-        <ImWhatsapp className="text-xl" /> WhatsApp:+8801700891599
+        <ImWhatsapp className="text-xl" />+8801700891599
       </p>
       <p className="flex items-center  gap-4">
-        <TfiSkype className="text-xl" />  live.akchakraborty55
+        <TfiSkype className="text-xl" /> live.akchakraborty55
       </p>
     </div>
   );

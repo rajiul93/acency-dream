@@ -43,9 +43,9 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className=" my-14">
-      <div className=" max-w-6xl mx-auto my-36  element mx-6  Box-Design ">
-        <h1 className="text-center   pt-14 text-2xl uppercase leading-loose about-font flex justify-center items-center gap-3 text-info">
+    <div className="">
+      <div className=" max-w-6xl mx-auto my-10 md:my-24  element   Box-Design ">
+        <h1 className="text-center   pt-14 md:text-2xl uppercase leading-loose about-font flex justify-center items-center gap-3 text-info">
           <MdOutlineRateReview /> What are they saying about us
         </h1>
         <Swiper
@@ -55,9 +55,7 @@ const AboutUs = () => {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          // pagination={{
-          //     clickable: true,
-          // }}
+      
           loop={true}
           modules={[
             Autoplay,
@@ -68,34 +66,18 @@ const AboutUs = () => {
           className="mySwiper"
         >
           {outSourceData?.map((item, index) => {
-            return <SwiperSlide
-              key={index}
-              className="text-neutral text-center flex justify-center flex-col gap-10 h-56 pb-28 px-2"
-            >
-              <h1 className="text-xl   italic leading-snug">
-              {item.content}
-
-              </h1>
-              <small>
-              {item.name}
-              </small>
-            </SwiperSlide>;
+            return (
+              <SwiperSlide
+                key={index}
+                className="text-neutral text-center flex justify-center flex-col gap-10 h-56  pb-5 px-2"
+              >
+                <h1 className="text-sm md:text-xl   italic leading-snug">
+                  {item.content}
+                </h1>
+                <small>{item.name}</small>
+              </SwiperSlide>
+            );
           })}
-
-          {/* <SwiperSlide className='text-neutral text-center flex justify-center flex-col gap-10 h-56 pb-28 px-2'>
-                    <h1 className='text-xl   italic leading-snug'>The workflow and project management style that the team used was good</h1>
-                    <small>MD. Rajiul Islam (Rayhan) <span className='text-gray-600'>CEO0</span></small>
-                </SwiperSlide>
-          
-                <SwiperSlide className='text-neutral text-center flex justify-center flex-col gap-10 h-56 pb-28 px-2'>
-                    <h1 className='text-xl   italic leading-snug'>The workflow and project management style that the team used was good</h1>
-                    <small>MD. Rajiul Islam (Rayhan) <span className='text-gray-600'>CEO0</span></small>
-                </SwiperSlide>
-          
-                <SwiperSlide className='text-neutral text-center flex justify-center flex-col gap-10 h-56 pb-28 px-2'>
-                    <h1 className='text-xl   italic leading-snug'>The workflow and project management style that the team used was good</h1>
-                    <small>MD. Rajiul Islam (Rayhan) <span className='text-gray-600'>CEO0</span></small>
-                </SwiperSlide> */}
         </Swiper>
       </div>
     </div>

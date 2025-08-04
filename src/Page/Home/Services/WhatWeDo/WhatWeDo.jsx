@@ -66,18 +66,20 @@ const WhatWeDo = () => {
             </h1>
 
             <p >
-              At Betechlab, we leverage over 10 years of trusted expertise to
+            <span className="mr-1">
+            At Betechlab, we leverage over 10 years of trusted expertise to
               deliver top-notch technology solutions that drive business
-              success. Our skilled team specializes in a wide array of services,
+              success. Our skilled team specializes in a wide array of services, 
+            </span>
               <span
                 onClick={() => setPraOne(true)}
                 className={`text-info ms-4 cursor-pointer ${
-                  praOne ? "hidden" : ""
+                  praOne ? "hidden  " : " "
                 }`}
               >
                 read more...
               </span>
-              <span className={praOne ? "block" : "hidden"}>
+              <span className={praOne ? "" : "hidden"}>
                 from software development to IT consulting, all designed to meet
                 the unique needs of our clients. We pride ourselves on our
                 commitment to quality and innovation, ensuring that every
@@ -87,10 +89,12 @@ const WhatWeDo = () => {
             </p>
             <br />
             <p>
+              <span className="mr-1">
               Our approach is centered around building strong, lasting
               relationships with our clients. We prioritize transparency,
               reliability, and excellence in every interaction, making sure your
               business is equipped
+              </span>
               <span
                 onClick={() => setPraTwo(true)}
                 className={`text-info ms-4 cursor-pointer ${
@@ -99,7 +103,7 @@ const WhatWeDo = () => {
               >
                 read more...
               </span>
-              <span className={praTwo ? "block" : "hidden"}>
+              <span className={praTwo ? "" : "hidden"}>
                 with the best technology solutions available. Whether you're
                 looking to enhance your digital infrastructure or innovate your
                 business processes, Betechlab is your go-to partner for

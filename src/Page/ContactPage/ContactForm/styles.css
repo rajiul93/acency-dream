@@ -1,0 +1,14 @@
+.custom-select {
+    appearance: none; /* Remove default arrow for a custom look */
+  }
+  
+  .custom-select .custom-option {
+    padding: 8px 2px; /* Control padding inside options */
+    height: 10px; /* Set height of each option */
+    line-height: 14px; /* Control text line height */
+  }
+  
+  .custom-select .custom-option:hover {
+    background-color: #dc1515; /* Change background color on hover */
+  }
+  

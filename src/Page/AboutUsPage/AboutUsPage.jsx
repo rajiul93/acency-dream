@@ -14,7 +14,7 @@ const AboutUsPage = () => {
     <div className="mt-14 lg:mt-24  ">
           <Helmet>
         <meta charSet="utf-8" />
-        <title>Betechlab | About Us</title>
+        <title>BeTechLab | About Us</title>
       </Helmet>
       <ScrollToTop />
 

@@ -1,23 +1,24 @@
 import { Helmet } from "react-helmet";
 import BlogItemVBannerButton from "../../../component/Button/BlogItemVBannerButton";
 import ScrollToTop from "../../../share/ScrollToTop/ScrollToTop";
+import { getDate } from "../../../utils/getDate";
 import Contact from "../../Home/Contact/Contact";
 import BlogItemTab from "../BlogItemPage/BlogItemTab/BlogItemTab";
 
  
 
 const BlogPage = () => {
-
+  const date = getDate()
     return (
         <>
-        <div className=" max-w-6xl mx-auto my-24 px-6">
+        <div className=" max-w-6xl mx-auto mt-24 mb-32 px-6">
                   <Helmet>
         <meta charSet="utf-8" />
         <title>BeTechLab | Blog</title>
       </Helmet>
       <ScrollToTop />
 
-        <div className="card border-none shadow-none glass md:flex-row-reverse">
+        <div className="card border-none shadow-none glass md:flex-row-reverse ">
           <figure className="md:w-1/2 rounded-none">
             <img
               // className="max-h-64" 
@@ -30,7 +31,7 @@ const BlogPage = () => {
             Insights & Innovations: The Betechlab Blog
 
             </h2>
-            <p className="text-sm text-info">Jun 11, 2024•8 min</p>
+            <p className="text-sm text-info"> {date}</p>
             <p className="text-xl card-font">
             Welcome to the Betechlab Blog, your go-to source for the latest trends, insights, and innovations in the technology world. Our expert team shares valuable knowledge, industry updates, and practical tips to help you stay ahead in the ever-evolving digital landscape. Join us on a journey of discovery and transformation, as we explore the cutting-edge developments shaping the future of technology.
 

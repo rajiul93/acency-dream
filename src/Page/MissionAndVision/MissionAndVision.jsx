@@ -13,7 +13,7 @@ const MissionAndVision = () => {
         <div className=" md:mt-24">
                    <Helmet>
         <meta charSet="utf-8" />
-        <title>Dream | Mission & Vision</title>
+        <title>BeTechLab | Mission & Vision</title>
       </Helmet>
       <ScrollToTop />
 

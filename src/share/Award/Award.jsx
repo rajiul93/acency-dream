@@ -10,10 +10,24 @@ import "./style.css";
 import { Autoplay, FreeMode } from "swiper/modules";
 const Award = () => {
   return (
-    <div className="mt-24 max-w-6xl mx-auto px-6">
+    <div className="mt-10 max-w-6xl mx-auto px-6">
       <>
         <Swiper
-          slidesPerView={5}
+          slidesPerView={2}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }}
           spaceBetween={30}
           loop={true}
           autoplay={{
@@ -27,42 +41,42 @@ const Award = () => {
           <SwiperSlide className="box flex items-center">
             <img
               className=""
-              src="https://www.webscreenscraping.com/assets/img/client-logo/turstpilot.png"
+              src="https://betechlab.com/image/awards/clutch.png"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide className="box flex items-center">
             <img
               className=""
-              src="https://www.webscreenscraping.com/assets/img/client-logo/clutch.png"
+              src="https://betechlab.com/image/awards/crunchbase.png"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide className="box flex items-center">
             <img
               className=""
-              src="https://www.webscreenscraping.com/assets/img/client-logo/web-guru-logo-web-screen-scraping.png"
+              src="https://betechlab.com/image/awards/develop-4u.png"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide className="box flex items-center">
             <img
               className=""
-              src="https://www.webscreenscraping.com/assets/img/client-logo/develop-4u.png"
+              src="https://betechlab.com/image/awards/goodfirms.png"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide className="box flex items-center">
             <img
               className=""
-              src="https://www.webscreenscraping.com/assets/img/client-logo/crunchbase.png"
+              src="https://betechlab.com/image/awards/turstpilot.png"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide className="box flex items-center">
             <img
               className=""
-              src="https://www.webscreenscraping.com/assets/img/client-logo/goodfirms.png"
+              src="https://betechlab.com/image/awards/web-guru-logo-web-screen-scraping.png"
               alt=""
             />
           </SwiperSlide>

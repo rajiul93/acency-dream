@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const FollowUs = () => {
     return (
-        <div className="flex gap-4 mt-2 justify-center">
+        <div className="flex gap-4 mt-2  ">
            <Link to=''> <FaFacebook className="text-base-100 text-2xl" /></Link>
            <Link to=''> <FaInstagram className="text-base-100 text-2xl" /></Link>
            <Link to=''> <FaYoutube className="text-red-600  text-2xl" /></Link>

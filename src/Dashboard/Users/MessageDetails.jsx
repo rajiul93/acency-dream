@@ -1,9 +1,9 @@
 import {
-    Button,
-    Dialog,
-    DialogBody,
-    DialogFooter,
-    DialogHeader,
+  Button,
+  Dialog,
+  DialogBody,
+  DialogFooter,
+  DialogHeader,
 } from "@material-tailwind/react";
 import React from "react";
 const MessageDetails = ({details}) => {
@@ -16,9 +16,11 @@ const MessageDetails = ({details}) => {
           Open Dialog
         </Button>
         <Dialog open={open} handler={handleOpen}>
-          <DialogHeader>Its a simple dialog.</DialogHeader>
-          <DialogBody>
+          <DialogHeader>User Email: </DialogHeader>
+          <DialogBody >
+           <div className="overflow-y-auto max-h-48">
            {details}
+           </div>
           </DialogBody>
           <DialogFooter>
             <Button

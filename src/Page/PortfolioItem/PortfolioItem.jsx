@@ -14,8 +14,7 @@ import WhyChooseActowiz from "../ServiceItem/WhyChooseActowiz/WhyChooseActowiz";
 
 const PortfolioItem = () => {
   const loadData =  useLoaderData()
-
-  console.log(loadData)
+ 
     return (
       <div className="  ">
       <Helmet>

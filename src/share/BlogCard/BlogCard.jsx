@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const BlogCard = ({ item }) => {
+  const navigate = useNavigate();
+  const handleNavigate = (url) => {
+    navigate(`/blog-details/${url}`);
+  };
 
- 
   return (
     <article
+      onClick={() => handleNavigate(item.url_id)}
       rel="noopener noreferrer"
-      className="bg-base-100 hover:scale-105 ease-in-out duration-300  shadow   
+      className="bg-base-100 hover:scale-105 ease-in-out duration-300  shadow-lg hover:cursor-pointer 
       max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-50"
       data-abc="true"
     >
@@ -16,12 +20,12 @@ const BlogCard = ({ item }) => {
         src={item.image}
       />
       <div className="space-y-2 p-2 md:p-6 mt-3">
-        <Link to={`/blog-details/${item.url_id}`} className="text-xl font-semibold group-hover:underline group-focus:underline cursor-pointer">
+        <p className="text-xl font-semibold group-hover:underline group-focus:underline cursor-pointer">
           {item?.tab_title}
-        </Link>
-        <br />
-        <span className="text-xs dark:text-gray-600">January 23, 2021</span>
-     
+        </p>
+        <small>
+          {item?.para_1}
+        </small>
       </div>
     </article>
   );

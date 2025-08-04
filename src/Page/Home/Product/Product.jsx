@@ -10,7 +10,7 @@ import Loading from "../../../utils/Loading";
 
 const Product = () => {
   const card_bg = "https://betechlab.com/image/product/product-bg.png";
-  console.log(card_bg,"from parent")
+ 
   const { data = [], isLoading } = useQuery({
     queryKey: ["home-product"],
     queryFn: async () => {
@@ -37,7 +37,7 @@ const Product = () => {
         {data?.length ? (
           <>
             {data?.slice(0, 4).map((item, index) => {
-              return <Card key={index} card_bg={card_bg} item={item} />;
+              return <Card key={index} card_bg={card_bg} bg_color="bg-[#002366]" item={item} />;
             })}
           </>
         ) : (

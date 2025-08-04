@@ -157,10 +157,10 @@ function NavListMenu({setOpenNav}) {
         placement="bottom"
         allowHover={true}
       >
-        <MenuHandler className="">
-          <Typography as="div" variant="small" className="font-medium text-xl ">
+        <MenuHandler className="-ms-3 md:ms-0">
+          <Typography as="div" variant="small" className="font-medium text-xl  ">
             <ListItem
-              className="flex justify-between items-center text-[14px] bg-white uppercase gap-2 py-2 pr-4 font-normal text-gray-900"
+              className="flex bg-transparent   justify-between items-center text-[14px]  uppercase gap-2 py-2 pr-4 font-normal text-gray-900"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -231,10 +231,10 @@ function AboutUs({setOpenNav}) {
         placement="top"
         allowHover={true}
       >
-        <MenuHandler className="">
+        <MenuHandler className="-ms-3">
           <Typography as="div" variant="small" className="font-medium text-xl ">
             <ListItem
-              className="flex justify-between bg-white font-normal items-center text-[14px] gap-2 py-2 pr-4 uppercase  text-gray-900"
+              className="flex bg-transparent   justify-between items-center text-[14px]  uppercase gap-2 py-2 pr-4 font-normal text-gray-900"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -275,9 +275,10 @@ function NavList({setOpenNav}) {
           Home
         </li>
       </NavLink> 
+ 
+<NavListMenu setOpenNav={setOpenNav}/>
 
-      <NavListMenu setOpenNav={setOpenNav}/>
-
+ 
     
       <NavLink
         to="/product">
@@ -341,13 +342,14 @@ export function MainNavbar() {
       <div className="flex items-center justify-between text-blue-gray-900">
         <li href="#" className="mr-4 cursor-pointer py-1.5 lg:ml-2 list-none">
           <Link to="/" className="flex gap-2 justify-center text-2xl text-info">
-            {/* <FcLineChart /> Dream */}
+        
+        
 
           <Logo />
           </Link>
         </li>
         <div className="hidden lg:block">
-          <NavList />
+          <NavList setOpenNav={setOpenNav} />
         </div>
         <IconButton
           variant="text"

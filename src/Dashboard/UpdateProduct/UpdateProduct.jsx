@@ -131,8 +131,7 @@ const UpdateProduct = () => {
     }
   };
  
-  if (Object.keys(loadData).length === 0) {
-    console.log(Object.keys(loadData).length);
+  if (Object.keys(loadData).length === 0) { 
     return <>You age going something wrong</>;
   }
  

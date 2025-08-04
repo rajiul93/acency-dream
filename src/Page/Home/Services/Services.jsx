@@ -71,7 +71,7 @@ const handleNavigate = (link)=>{
       <div
         className="
     grid place-items-center grid-cols1 md:grid-cols-3 lg:grid-cols-4
-       items-center max-w-xl px-4 md:max-w-2xl gap-10 lg:max-w-5xl mx-auto "
+       items-center max-w-xl px-4 md:max-w-2xl gap-10 lg:max-w-5xl mx-auto mt-14 "
       >
         {servicesList.map((item, index) => (
           <div

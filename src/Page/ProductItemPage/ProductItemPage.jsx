@@ -12,8 +12,7 @@ import YouCanTryForMe from "./YouCanTryForMe/YouCanTryForMe";
 const ProductItemPage = () => {
   const loadData = useLoaderData(); 
 
-  if (Object.keys(loadData).length === 0) {
-    console.log(Object.keys(loadData).length);
+  if (Object.keys(loadData).length === 0) { 
     return (
       <div className="mt-24 text-center h-[40vh] flex justify-center items-center text-warning text-xl ">
         You are going something wrong

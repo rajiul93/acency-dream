@@ -1,7 +1,7 @@
 .element {
   max-width: 70%;
   margin: 0 auto;
-  height: 250px;
+  min-height: 350px;
   background-color: rgba(255, 255, 255, 1);
   color: #000;
   border-radius: 10px;

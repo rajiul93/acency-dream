@@ -41,7 +41,7 @@ const Form = () => {
   } = useForm();
   const onSubmit = async (data) => {
     const url = data.page_url;
-    const seo= data.seo;
+    const seo = data.seo;
     const videoUrl1 = data.videoUrl1;
     const videoContent = data.videoContent;
     const category = data.category;
@@ -59,26 +59,34 @@ const Form = () => {
     const top_list_4 = data.top_list_4;
     const top_list_5 = data.top_list_5;
     const top_list_6 = data.top_list_6;
-    const top_list = [top_list_1, top_list_2,top_list_3,top_list_4,top_list_5, top_list_6]
-     const list_title_one = data.list_title_one;
+    const top_list = [
+      top_list_1,
+      top_list_2,
+      top_list_3,
+      top_list_4,
+      top_list_5,
+      top_list_6,
+    ];
+    const list_title_one = data.list_title_one;
     const listOne1 = data.listOne1;
     const listOne2 = data.listOne2;
     const listOne3 = data.listOne3;
     const listOne4 = data.listOne4;
     const listOne5 = data.listOne5;
-    const listOne = [listOne1, listOne2, listOne3, listOne4,listOne5];
+    const listOne = [listOne1, listOne2, listOne3, listOne4, listOne5];
     const list_title_two = data.list_title_two;
     const listTwo_1 = data.listTwo_1;
     const listTwo_2 = data.listTwo_2;
     const listTwo_3 = data.listTwo_3;
     const listTwo_4 = data.listTwo_4;
     const listTwo_5 = data.listTwo_5;
-    const listTwo = [listTwo_1, listTwo_2, listTwo_3, listTwo_4,listTwo_5];
+    const listTwo = [listTwo_1, listTwo_2, listTwo_3, listTwo_4, listTwo_5];
     const pageSortDesc = data.pageSortDesc;
     const pageTitle = data.pageTitle;
     const secondTitle = data.secondTitle;
     const newData = {
-      seo,url,
+      seo,
+      url,
       topListDescription,
       list_title_one,
       list_title_two,
@@ -109,10 +117,9 @@ const Form = () => {
         successMessage("Your work has been saved");
       }
     } catch (error) {
-      console.log(error)
       errorMessage("this character are not allow ${}[]*#!><");
     }
-  }; 
+  };
   return (
     <div>
       <div className="bg-white border border-4 rounded-lg shadow relative m-10">
@@ -129,9 +136,10 @@ const Form = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="border lg:grid grid-cols-2 items-center w-full gap-6  p-3 mb-4 rounded-lg">
               <label className="input input-bordered flex items-center gap-2 w-f">
-                Page title
+                Main Title
                 <input
                   type="text"
+                  placeholder="Main Title"
                   className="grow"
                   {...register("pageTitle")}
                 />
@@ -139,11 +147,12 @@ const Form = () => {
                   <span className="text-error">This field is required</span>
                 )}
               </label>
-           
+
               <label className="input input-bordered flex items-center gap-2 w-f">
-                Page sort description
+                Sort Description
                 <input
                   type="text"
+                  placeholder="Sort Description"
                   className="grow"
                   {...register("pageSortDesc")}
                 />
@@ -156,7 +165,7 @@ const Form = () => {
                 <input
                   type="text"
                   className="grow"
-                  {...register("page_url",{required:true})}
+                  {...register("page_url", { required: true })}
                   placeholder="Don't use empty space"
                 />
                 {errors.page_url && (
@@ -168,7 +177,7 @@ const Form = () => {
                 <input
                   type="text"
                   className="grow"
-                  {...register("seo",{required:true})}
+                  {...register("seo", { required: true })}
                   placeholder="enter your seo keyword"
                 />
                 {errors.seo && (
@@ -217,16 +226,56 @@ const Form = () => {
                 <option value="product">Product Items</option>
               </select>
             </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 border p-4 mb-4">
-              <input {...register("top_list_title")} type="text" placeholder="header list title" className="input input-bordered w-full " />
-              <input {...register("top_list_1")} type="text" placeholder="header list one" className="input input-bordered w-full " />
-              <input {...register("top_list_2")} type="text" placeholder="header list two" className="input input-bordered w-full " />
-              <input {...register("top_list_3")} type="text" placeholder="header list three" className="input input-bordered w-full " />
-              <input {...register("top_list_4")} type="text" placeholder="header list four" className="input input-bordered w-full " />
-              <input {...register("top_list_5")} type="text" placeholder="header list five" className="input input-bordered w-full " />
-              <input {...register("top_list_6")} type="text" placeholder="header list six" className="input input-bordered w-full " />
-              <input {...register("topListDescription")} type="text" placeholder="description" className="input input-bordered w-full " />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 border p-4 mb-4">
+              <input
+                {...register("top_list_title")}
+                type="text"
+                placeholder="Sub Title"
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("top_list_1")}
+                type="text"
+                placeholder="Sub list 1"
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("top_list_2")}
+                type="text"
+                placeholder="Sub list 2"
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("top_list_3")}
+                type="text"
+                placeholder="Sub list 3"
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("top_list_4")}
+                type="text"
+                placeholder="Sub list 4"
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("top_list_5")}
+                type="text"
+                placeholder="Sub list 5"
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("top_list_6")}
+                type="text"
+                placeholder="Sub list 6 "
+                className="input input-bordered w-full "
+              />
+              <input
+                {...register("topListDescription")}
+                type="text"
+                placeholder="Sub Description"
+                className="input input-bordered w-full "
+              />
+            </div>
 
             <div className="grid grid-cols-6 gap-6">
               <div className="col-span-6 sm:col-span-3">
@@ -272,8 +321,7 @@ const Form = () => {
                 >
                   List title one
                 </label>
-                <input 
-
+                <input
                   {...register("list_title_one")}
                   type="text"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
@@ -289,8 +337,7 @@ const Form = () => {
                 >
                   List title two
                 </label>
-                <input 
-
+                <input
                   {...register("list_title_two")}
                   type="text"
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
@@ -469,7 +516,6 @@ const Form = () => {
               </div>
               {video && (
                 <>
-               
                   <div className="col-span-6 sm:col-span-3">
                     <label
                       htmlFor="brand"
@@ -482,7 +528,6 @@ const Form = () => {
                       className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                       {...register("videoUrl1")}
                     />
-                    
                   </div>
                   <div className="col-span-6 sm:col-span-3">
                     <label
@@ -497,9 +542,7 @@ const Form = () => {
                       className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                       {...register("videoContent")}
                     />
-                    
                   </div>
-                  
                 </>
               )}
 
@@ -511,10 +554,9 @@ const Form = () => {
                   First Details
                 </label>
                 <textarea
-                  id="product-details"
                   rows="6"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4"
-                  placeholder="Details"
+                  placeholder="First Details"
                   {...register("description1")}
                 ></textarea>
                 {errors.description1 && (
@@ -532,7 +574,7 @@ const Form = () => {
                   id="product-details"
                   rows="6"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4"
-                  placeholder="Details"
+                  placeholder="Second Details"
                   {...register("description2")}
                 ></textarea>
                 {errors.description2 && (

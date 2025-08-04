@@ -57,7 +57,7 @@ const Footer = () => {
       link: "/service-item/advanced-seo-services",
       icon: TbSettingsSearch,
     },
-  
+
     {
       title: "Data Analyst",
       link: "/service-item/data-analysis-insights",
@@ -97,7 +97,7 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="footer grid-cols-1 md:grid-cols-3 lg:grid-cols-4  pt-8 pb-2 max-w-6xl mx-auto  text-base-content">
+    <footer className="footer sm:grid-cols-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-4  pt-8 pb-2 max-w-6xl mx-auto  text-base-content">
       <nav>
         <h6 className="footer-title text-base-100">Services</h6>
         {navListMenuItems.map((item) => (
@@ -136,24 +136,28 @@ const Footer = () => {
         >
           Portfolio
         </Link>
-        <Link to="/product" className="link link-hover text-base-100  text-[14px]">
-         Product
+        <Link
+          to="/product"
+          className="link link-hover text-base-100  text-[14px]"
+        >
+          Product
         </Link>
         <Link to="/blog" className="link link-hover text-base-100  text-[14px]">
-         Blog
+          Blog
         </Link>
       </nav>
-     
 
-      <aside>
+      <aside className="">
         <Logo />
-    
+
         <SocialMedia />
-        <FollowUs />
-        <h1 className="text-base-100 mt-2">
-          For Quick Contact Scan the QR code <br /> and Say Hi
-        </h1>
-        <img width={150} src={QR_Code} alt="" />
+        <div className="flex flex-col md:flex-none  gap-4 items-center md:items-start text-center ">
+          <FollowUs />
+          <h1 className="text-base-100 mt-2 text-center md:text-start">
+            For Quick Contact Scan the QR code and Say Hi
+          </h1>
+          <img width={150} src={QR_Code} alt="" />
+        </div>
       </aside>
     </footer>
   );

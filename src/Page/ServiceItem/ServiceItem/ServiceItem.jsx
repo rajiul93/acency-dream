@@ -11,8 +11,7 @@ import WhyChooseActowiz from "../WhyChooseActowiz/WhyChooseActowiz";
 
 const Service = () => {
   const data = useLoaderData();
-  if (Object.keys(data).length === 0) {
-    console.log(Object.keys(data).length);
+  if (Object.keys(data).length === 0) { 
     return (
       <div className="mt-24 text-center h-[40vh] flex justify-center items-center text-warning text-xl ">
         You are going something wrong

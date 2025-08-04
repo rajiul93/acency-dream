@@ -19,14 +19,14 @@ const Home = () => {
       </Helmet>
       <ScrollToTop />
       <Hero />
-   
+
       <Services />
       <WhatWeDo />
 
       <Product />
       <Outsource />
       <Fact />
-      <TrustedUs /> 
+      <TrustedUs />
       <AboutUs />
       <Contact />
     </div>

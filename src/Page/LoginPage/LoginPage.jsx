@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,10 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const { loading, setLoading, setUser } = useContext(AuthContext);
+  const [otp, setOtp] = useState("");
+
+ 
+ 
   const {
     register,
     handleSubmit,
@@ -22,6 +26,19 @@ const LoginPage = () => {
   const onSubmit = async (userData) => {
     setLoading(false);
     try {
+      if (!otp) {
+        const data = await axios.put(
+          `${import.meta.env.VITE_API}/user/send-email`,
+          { otp }
+        );
+
+        if (data.data.message === "Email sent successfully") {
+          setOtp("Email sent successfully")
+          setLoading(true);
+        }
+        return;
+      }
+
       await axios.post(`${import.meta.env.VITE_API}/jwt`, userData, {
         withCredentials: true,
       });
@@ -103,14 +120,37 @@ const LoginPage = () => {
                   <span className="text-error">This field is required</span>
                 )}
               </div>
+       { otp &&      <div className="relative mt-6">
+                <input
+                  type="text"
+                  name="otp"
+                  id="otp"
+                  placeholder="OTP"
+                  {...register("OTP", { required: true })}
+                  className="peer peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
+                />
+                <label
+                  htmlFor="OTP"
+                  className="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
+                >
+                  OTP
+                </label>
+                {errors.OTP && (
+                  <span className="text-error">This field is required</span>
+                )}
+              </div>}
               <div className="my-6">
                 {loading ? (
-                  <button
-                    type="submit"
-                    className="w-full rounded-md bg-black px-3 py-4 text-white focus:bg-gray-600 focus:outline-none"
-                  >
-                    Sign in
-                  </button>
+                  otp ? (
+                    <button
+                      type="submit"
+                      className="w-full rounded-md bg-black px-3 py-4 text-white focus:bg-gray-600 focus:outline-none"
+                    >
+                      Sign in
+                    </button>
+                  ) : (
+                    <button className="btn btn-info">send otp</button>
+                  )
                 ) : (
                   <button
                     type="submit"
@@ -121,6 +161,16 @@ const LoginPage = () => {
                 )}
               </div>
             </form>
+
+            {/* {loading? 
+          <button onClick={handleOtp} className="btn btn-info">
+                send otp
+               </button>
+          :
+            <button  className="btn btn-info">
+              <span className="loading loading-infinity loading-lg"></span>
+               </button>
+               } */}
           </div>
         </div>
       </div>

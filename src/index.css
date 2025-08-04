@@ -98,7 +98,10 @@ a.active {
   transform: translateY(150px);
   transition: all 0.2s ease-out;
 }
-
+/* card inline common css check your product Page */
+.card_inline_css{ 
+  @apply uppercase font-semibold cursor-pointer text-sm sm:text-base md:text-lg px-2 whitespace-nowrap
+}
 .card:hover .card-button {
   transform: translateX(0px);
   transition: all 0.2s ease-out; 

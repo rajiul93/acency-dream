@@ -26,6 +26,7 @@ import ProductPage from "../Page/ProductPage/Product/ProductPage";
 import ScheduleMeeting from "../Page/ScheduleMeeting/ScheduleMeeting";
 import ServiceItem from "../Page/ServiceItem/ServiceItem/ServiceItem";
 import ServicePage from "../Page/ServicePage/ServicePage";
+import Test from "../Page/Test/Test";
 import WhyUs from "../Page/WhyUs/WhyUs";
 import PrivetRout from "./PrivetRout/PrivetRout";
 
@@ -113,6 +114,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/test",
+        element: <Test />,
       },
     ],
   },

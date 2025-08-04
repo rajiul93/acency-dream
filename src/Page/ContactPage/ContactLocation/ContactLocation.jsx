@@ -18,13 +18,14 @@ const ContactLocation = () => {
       <div className="md:flex  ">
         <div className=" bg-info p-6 text-base-100 md:w-1/2  space-y-4">
           <h1 className="text-2xl font-semibold ">Directly Contact Us</h1>
-          <SocialMedia />
+          <SocialMedia  />
         
-          <p className="flex items-center  gap-4"><IoLocationOutline className="text-2xl" /> Kumarpara, Rajshahi, Bangladesh</p>
+          <p className="flex items-start md:items-center  gap-4"><IoLocationOutline className="text-4xl" /> Kumarpara, Rajshahi, Bangladesh</p>
        
           <div>
-           <div className="flex mt-9 items-center gap-5">
+           <div className="md:flex mt-9 items-center gap-5">
            <h1 className=" text-xl font-semibold">Follow Us</h1>
+           
            <FollowUs />
            </div>
           </div>

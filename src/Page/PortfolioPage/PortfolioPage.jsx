@@ -7,29 +7,29 @@ import Contact from "../Home/Contact/Contact";
 import Brand from "../ServiceItem/Brand/Brand";
 import OurPortfolio from "./OurPortfolio";
 
- 
 const PortfolioPage = () => {
-    const title = "Portfolio"
-    const content = "At Betechlab, we craft innovative solutions that fuel business growth. Our portfolio reflects our passion for technology and excellence, showcasing projects that turn challenges into opportunities. Explore our work and see how we help businesses lead in the digital age."
-    return (
-        <div className="pt-16">
-              <Helmet>
+  const title = "Portfolio";
+  const content =
+    "At Betechlab, we craft innovative solutions that fuel business growth. Our portfolio reflects our passion for technology and excellence, showcasing projects that turn challenges into opportunities. Explore our work and see how we help businesses lead in the digital age.";
+  return (
+    <div className="pt-16">
+      <Helmet>
         <meta charSet="utf-8" />
+        <meta name="description" content="Helmet application" />
         <title>BeTechLab | Portfolio</title>
       </Helmet>
       <ScrollToTop />
 
-      <PageBanner1 title={title} content={content}  />
+      <PageBanner1 title={title} content={content} />
 
-            <Brand />
-            {/* <PageBannerTitle /> */}
+      <Brand />
       <SectionTitle title="Portfolio" />
 
-            <OurPortfolio />
-            <div className="py-10"></div>
-            <Contact />
-        </div>
-    );
+      <OurPortfolio />
+      <div className="py-10"></div>
+      <Contact />
+    </div>
+  );
 };
 
 export default PortfolioPage;

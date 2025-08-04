@@ -1,11 +1,13 @@
 const VideoContent = ({ loadData }) => {
   return (
-    <div className="md:flex justify-center gap-6 flex-row-reverse max-w-6xl mx-auto">
+    <div className="md:flex justify-center items-center gap-6 flex-row-reverse max-w-6xl mx-auto">
       <div className="flex items-center w-full  col-span-6">
-        <div className="px-6 h-96 lg:h-100% w-full max-w-2xl col-span-6 flex items-center mx-auto">
+        <div className="px-6  lg:h-100% w-full max-w-2xl col-span-6 flex items-center mx-auto">
           <div style={{ width: "100%", height: "100%" }}>
             <div style={{ width: "100%", height: "100%" }}>
               <video
+                className="border-4"
+
                 controls
                 width="100%"
                 height="100%"

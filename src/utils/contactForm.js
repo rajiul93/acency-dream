@@ -2,7 +2,7 @@ import axios from "axios";
 import { errorMessage } from "./errorMessage";
 import { successMessage } from "./successMessage";
 
-export const contactForm = async (data, setLoading) => {
+export const contactForm = async (data, setLoading,reset) => {
   setLoading(false);
 
   try {
@@ -14,6 +14,7 @@ export const contactForm = async (data, setLoading) => {
     if (response.data.acknowledged) {
       successMessage("your message send successfully");
       setLoading(true);
+      reset()
     } 
   } catch (error) {
     errorMessage("this character are not allow ${}[]*#!><");
