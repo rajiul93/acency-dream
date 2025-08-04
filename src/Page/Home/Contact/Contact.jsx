@@ -1,9 +1,9 @@
-import { ImSkype, ImWhatsapp } from "react-icons/im";
+import {  ImWhatsapp } from "react-icons/im";
 import { RiMessage2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import contact from "../../../assets/contact-us.png";
 import FooterForm from "./FooterForm";
-
+import { CgProfile } from "react-icons/cg";
 const Contact = () => {
   return (
     <div className=" mt-24">
@@ -29,7 +29,7 @@ const Contact = () => {
                     <div>
                       <h1 className="text-lg">MAIL US</h1>
 
-                      <p>info@betechlab.com</p>
+                      <p>mrsmousumi5501@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -37,11 +37,11 @@ const Contact = () => {
               <div className=" flex flex-col justify-center w-full ">
                 <div className="bg-gradient-to-r from-accent-content to-[#7dd3fc] rounded-lg   p-2">
                   <div className="flex items-center gap-4">
-                    <ImSkype className="text-4xl text-info " />
+                    <CgProfile className="text-4xl text-info " />
                     <div>
-                      <h1 className="text-lg">Our Skype ID</h1>
+                      <h1 className="text-lg">Name</h1>
 
-                      <p>live.akchakraborty55</p>
+                      <p>Mousumi Chakraborty</p>
                     </div>
                   </div>
                 </div>
